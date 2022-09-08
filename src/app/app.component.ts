@@ -20,11 +20,9 @@ export class AppComponent {
 			response.json().then(function (data) {
 
 				let fetchedSatellites = data.satellites;
-				// loop over satellites
 				for(let i=0; i < fetchedSatellites.length; i++) {
-					// create a Satellite object 
-					let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
-					// add the new Satellite object to sourceList 
+					
+					let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational); 
 					this.sourceList.push(satellite);
 				 }
 
